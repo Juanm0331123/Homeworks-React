@@ -1,10 +1,10 @@
 import './App.css'
-import FirstApp from './Components/FirstApp';
+import { ComponentApp } from './Components/ComponentApp';
 
 const App = () => {
   return (
     <>
-      <FirstApp />
+      <ComponentApp />
     </>
   )
 }
