@@ -4,7 +4,8 @@ import FirstApp from './Components/FirstApp';
 const App = () => {
   return (
     <>
-      <FirstApp />
+      <FirstApp
+        value={0} />
     </>
   )
 }
