@@ -1,38 +1,30 @@
 import './ComponentApp.css'
 import { useState } from 'react';
+import { AddCategory } from './AddCategory'
+import { GiftGrid } from './GiftGrid';
 
 const initialsCategories = ['First category', 'Second category', 'Third category'];
 
 export const ComponentApp = () => {
     const [categories, setCategories] = useState(initialsCategories);
-    const [category, setCategory] = useState('');
 
-    const handleInputChange = (event) => {
-        setCategory(event.target.value);
-    }
-
-    const handleAddCategory = () => {
+    const handleAddCategory = (category) => {
         setCategories([...categories, category]);
-        setCategory('');
     }
 
     return (
         <>
             <h1>GifExpert</h1>
+            <AddCategory handleAddCategory={handleAddCategory} />
             <ol>
                 {
                     categories.map(
                         (category, key) => {
-                            return <li key={key}>
-                                {category}
-                            </li>
+                            return <GiftGrid key={key} category={category} />
                         }
                     )
                 }
             </ol>
-
-            <input type="text" value={category} onChange={handleInputChange} />
-            <button onClick={handleAddCategory}>Add category</button>
         </>
     )
 }
