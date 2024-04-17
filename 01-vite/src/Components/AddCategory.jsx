@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 export const AddCategory = ({ handleAddCategory }) => {
 
-    const [category, setCategory] = useState('');
+    const [category, setCategory] = useState([]);
 
     const handleInputChange = (event) => {
         setCategory(event.target.value);

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { AddCategory } from './AddCategory'
 import { GiftGrid } from './GiftGrid';
 
-const initialsCategories = ['First category', 'Second category', 'Third category'];
+const initialsCategories = [''];
 
 export const ComponentApp = () => {
     const [categories, setCategories] = useState(initialsCategories);

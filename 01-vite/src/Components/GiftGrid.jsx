@@ -1,5 +1,6 @@
-
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types';
+import { GifItem } from './GiftItem'
 
 const getGifts = async (category) => {
     const url = `https://api.giphy.com/v1/gifs/search?api_key=SS07RTrf44dYT9Y0UM2c60kjQ24ErcNu&q=${category}&limit=25&offset=0&rating=g&lang=es&bundle=messaging_non_clips`
@@ -18,14 +19,23 @@ const getGifts = async (category) => {
 }
 
 export const GiftGrid = ({ category }) => {
+    const [images, setImages] = useState([]);
 
-    getGifts(category)
+    const fetchGifs = async () => {
+        const gifs = await getGifts(category);
+        console.log(gifs);
+        setImages(gifs);
+    }
+
+    useEffect(() => {
+        fetchGifs();
+    }, [category]);
 
     return (
-        <>
+        <div className="gif-grid">
             <h3>{category}</h3>
-            <p>Hello World</p>
-        </>
+            {images.map(img => <GifItem key={img.id} {...img} />)}
+        </div>
     )
 }
 
