@@ -1,10 +1,10 @@
 import './App.css'
-import FirstApp from './Components/FirstApp';
+import { GiftExpertApp } from './Components/GiftExpertApp';
 
 const App = () => {
   return (
     <>
-      <FirstApp />
+      <GiftExpertApp />
     </>
   )
 }
