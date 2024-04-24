@@ -1,10 +1,10 @@
 import './App.css'
-import { ComponentApp } from './Components/ComponentApp';
+import { TodoApp } from './Components/TodoApp';
 
 const App = () => {
   return (
     <>
-      <ComponentApp />
+      <TodoApp />
     </>
   )
 }
