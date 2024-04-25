@@ -13,7 +13,7 @@ export const TodoForm = ({ addTodo }) => {
         if (inputValue.trim().length > 0) {
             addTodo({
                 id: new Date().getTime(),
-                description: inputValue,
+                name: inputValue,
                 done: false
             });
             setInputValue('');
