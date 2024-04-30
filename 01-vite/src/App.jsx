@@ -1,10 +1,10 @@
 import './App.css'
-import { CallBackHook } from './Components/CallbackHook';
+import { Father } from './Components/Father';
 
 const App = () => {
   return (
     <>
-      <CallBackHook />
+      <Father />
     </>
   )
 }
