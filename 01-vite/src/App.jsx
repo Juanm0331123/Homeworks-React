@@ -1,11 +1,12 @@
 import './App.css'
-// import { ComponentApp } from './Components/ComponentApp';
 import { Counter } from './Components/Counter';
+import MultipleCustomHooks from './Components/MultipleCustomHooks';
 
 const App = () => {
   return (
     <>
       <Counter />
+      <MultipleCustomHooks />
     </>
   )
 }
