@@ -1,12 +1,10 @@
 import './App.css'
-import { Counter } from './Components/Counter';
-import MultipleCustomHooks from './Components/MultipleCustomHooks';
+import { CallBackHook } from './Components/CallbackHook';
 
 const App = () => {
   return (
     <>
-      <Counter />
-      <MultipleCustomHooks />
+      <CallBackHook />
     </>
   )
 }
