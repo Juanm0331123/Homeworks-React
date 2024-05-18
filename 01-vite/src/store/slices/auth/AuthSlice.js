@@ -14,6 +14,9 @@ export const authSlice = createSlice({
         register: (state, action) => {
             state.email = action.payload.email
         },
+        login: (state, action) => {
+            state.email = action.payload.email;
+        },
         logout: (state, action) => {
         },
         checkingCredentials: (state, action) => {
@@ -22,4 +25,4 @@ export const authSlice = createSlice({
     }
 })
 
-export const { register, logout, checkingCredentials } = authSlice.actions
+export const { register, login, logout, checkingCredentials } = authSlice.actions;
