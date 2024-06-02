@@ -1,0 +1,15 @@
+.navBar {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.navLink {
+    text-decoration: none;
+    color: black;
+}
+
+.activeLink {
+    color: red;
+}
