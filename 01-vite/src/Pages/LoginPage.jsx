@@ -1,29 +1,35 @@
-import { useState } from 'react';
+import { useContext } from 'react';
+import { UserContext } from '../Components/Context/UserContext';
+import { useNavigate } from 'react-router-dom';
 
 export const LoginPage = () => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    const { user, login } = useContext(UserContext);
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        // Aquí puedes manejar el inicio de sesión
-        console.log(`Iniciando sesión con usuario: ${username} y contraseña: ${password}`);
-    }
+    const navigate = useNavigate();
+
+    const onLogin = () => {
+        login({
+            id: 123,
+            name: 'Juan Miguel Leon',
+            email: 'juanmiguelleon43@gmail.com'
+        });
+
+        const lastPath = localStorage.getItem('lastPath') || '/';
+        navigate(lastPath, {
+            replace: true
+        });
+    };
 
     return (
-        <div>
-            <h1>LoginPage</h1>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    Usuario:
-                    <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-                </label>
-                <label>
-                    Contraseña:
-                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                </label>
-                <input type="submit" value="Iniciar sesión" />
-            </form>
-        </div>
-    )
-}
+        <>
+            <div>Login Page</div>
+            <pre>
+                {JSON.stringify(user, null, 3)}
+            </pre>
+
+            <button className='btn btn-primary' onClick={onLogin}>
+                Login
+            </button>
+        </>
+    );
+};
