@@ -1,12 +1,19 @@
+
 import { NavLink } from 'react-router-dom';
-import './NavComponent.css';
+import './navComponent.css';
 
 export const NavComponent = () => {
     return (
-        <nav className="navBar">
-            <NavLink className="navLink" activeClassName="activeLink" exact to="/"> Home </NavLink>
-            <NavLink className="navLink" activeClassName="activeLink" to="/about"> About </NavLink>
-            <NavLink className="navLink" activeClassName="activeLink" to="/login"> Login </NavLink>
+        <nav className="nav">
+            <NavLink to="/" exact activeClassName="active" className="nav-link">
+                Home
+            </NavLink>
+            <NavLink to="/about" activeClassName="active" className="nav-link">
+                About
+            </NavLink>
+            <NavLink to="/contact" activeClassName="active" className="nav-link">
+                Contact
+            </NavLink>
         </nav>
-    )
-}
+    );
+};
